@@ -5,7 +5,7 @@
 **Última atualização:** 2026-08-05
 
 > Product Requirement Document. Fonte da verdade do **produto atual**.  
-> Backlog futuro: `docs/melhorias-futuras.md`
+> Backlog futuro: `docs/melhorias-futuras.md` (arquivo local — não versionado no fork DIO).
 
 ## 1. Problema e usuário
 

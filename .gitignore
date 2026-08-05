@@ -42,3 +42,8 @@ yarn-error.*
 # generated native folders
 /ios
 /android
+
+# Interno (não versionar no fork DIO — só máquina local)
+.cursor/
+.cursorignore
+docs/melhorias-futuras.md

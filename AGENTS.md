@@ -8,8 +8,8 @@ Desafio DIO Vibe Coding + MVP funcional Expo.
 | Tipo | Arquivos | Quando |
 |------|----------|--------|
 | Global | `~/.cursor/rules/` + Settings → Rules | Sempre |
-| Projeto (alwaysApply) | `.cursor/rules/seguranca-informacao.mdc`, `engenharia-software.mdc`, `qa.mdc`, `metricas-codigo.mdc` | Sempre neste repo |
-| Stack | `.cursor/rules/expo-react-native.mdc` | Arquivos Expo/RN |
+| Projeto (local) | `.cursor/rules/*.mdc` | Só nesta máquina (não versionado no fork DIO) |
+| Stack (local) | `.cursor/rules/expo-react-native.mdc` | Arquivos Expo/RN |
 
 ## Estrutura
 
@@ -39,6 +39,7 @@ npm run db:check
 | Arquivo | Conteúdo |
 |---------|----------|
 | `docs/PRD.md` | Produto atual |
-| `docs/melhorias-futuras.md` | Backlog |
 | `docs/comandos-testes.md` | Packs de check |
 | `README.md` | Entrega DIO (PRD/prompt, prints, reflexão) |
+
+> Backlog futuro (`docs/melhorias-futuras.md`) e regras Cursor (`.cursor/`) ficam **só locais**, fora do fork DIO.
