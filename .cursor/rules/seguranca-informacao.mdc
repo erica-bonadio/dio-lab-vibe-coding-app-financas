@@ -1,0 +1,31 @@
+---
+description: Diretrizes de seguranca da informacao (Triade CID) — aplicam sempre neste workspace
+alwaysApply: true
+---
+
+# Seguranca da Informacao (global + Capim)
+
+Regra global: `~/.cursor/rules/seguranca-informacao.mdc` + Cursor Settings → Rules.
+
+## Triade CID
+
+- **Confidencialidade:** secrets em `.env`; nunca logar PII/tokens
+- **Integridade:** validar/sanitizar input; ORM ou prepared statements
+- **Disponibilidade:** tratamento de erros; fallbacks
+
+## Packs (quando o projeto tiver scripts)
+
+- **SI** = `cid:check` · **BD** = `db:check` / `db:test`
+- Comandos: `docs/comandos-testes.md`
+
+## Este projeto
+
+- Dados financeiros locais (SQLite `capim.db`): transações, metas, histórico de chat
+- Auth: senha local (SHA-256 no Secure Store) + biometria opcional — sem conta nuvem no MVP
+- Backup Drive: apenas ciphertext (AES-GCM); DEK embrulhada com KEK da senha; tokens OAuth no Secure Store
+- Secrets de IA (futuro): só em `server/.env`, nunca no client Expo
+- Sem logs com valores/PII/tokens
+
+## Nunca
+
+- Commitar `.env`, chaves API, tokens, certificados

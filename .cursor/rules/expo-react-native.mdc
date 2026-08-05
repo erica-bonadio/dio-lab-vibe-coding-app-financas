@@ -1,0 +1,29 @@
+---
+description: Stack Expo / React Native do Capim
+globs:
+  - app/**/*.{ts,tsx}
+  - src/**/*.{ts,tsx}
+  - shared/**/*.ts
+  - server/**/*.{ts,js,mjs}
+alwaysApply: false
+---
+
+# Stack — Capim (Expo)
+
+## Este projeto
+
+- Expo SDK 54 + Expo Router (`app/`)
+- Offline-first: SQLite em `src/db/` (`capim.db`)
+- Features em `src/features/` (chat, agent, auth, backup)
+- Backup: E2EE (AES-GCM) + Google Drive `appDataFolder` + sync automático
+- Contratos em `shared/`
+- API IA opcional em `server/` (chaves só em `.env`, nunca no client)
+- Valores monetários em **centavos** (`amount_cents`)
+- UI e prompts em **pt-BR**
+
+## Não fazer
+
+- Secrets no app Expo (exceto Client IDs OAuth públicos)
+- Subir snapshot em texto claro para o Drive
+- Float para dinheiro
+- Inverter camadas (UI não fala SQL direto — usa repositories)

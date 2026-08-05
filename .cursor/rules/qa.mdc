@@ -1,0 +1,16 @@
+---
+description: QA — DoD e Check pos-implementacao — aplicam sempre neste workspace
+alwaysApply: true
+---
+
+# QA (global + Capim)
+
+Regra global: `~/.cursor/rules/qa.mdc` + Cursor Settings → Rules.
+
+## Este projeto
+
+- Happy path: chat `gastei 45 no mercado` → lançamento + saldo; Backup Drive E2EE com Client IDs
+- Edge: mensagem sem valor; senha curta no setup; restore com senha errada
+- Comandos: `npm run typecheck` · `cid:check` · `db:check` — ver `docs/comandos-testes.md`
+- Packs canônicos: `cid:check` · `db:check` (+ metrics/perf quando houver)
+- Áreas críticas: auth local, dados financeiros no device, parser de valores, backup/sync Drive

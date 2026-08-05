@@ -1,89 +1,88 @@
-# 💸 App de Organização de Finanças Pessoais com Vibe Coding
+# Capim — App de Finanças Pessoais (DIO Vibe Coding)
 
-Aprenda a **criar soluções com IA** de forma criativa, guiando ferramentas como o **Copilot** e o **Lovable** com uma comunicação simples e natural. O foco é desenvolver o conceito de um **App de Organização de Finanças Pessoais**, mas, acima de tudo, aprender o **jeito Vibe de programar com IA**.
+> Entrega do lab [dio-lab-vibe-coding-app-financas](https://github.com/digitalinnovationone/dio-lab-vibe-coding-app-financas)  
+> **Além do conceito:** MVP nativo funcional (Expo / React Native), offline-first.
 
-## ✨ O que é Vibe Coding
+## Resumo do conceito
 
-**Vibe Coding** é uma forma leve e criativa de desenvolver com IA, baseada em **conversas naturais e bem estruturadas**. Você não precisa escrever código linha por linha. Em vez disso, aprende a **guiar a IA** descrevendo suas ideias de forma clara, com **intenção e contexto**. Em outras palavras:
+O **Capim** é um app de organização financeira em que você **registra gastos e receitas conversando**, sem formulários cansativos. No aparelho: senha/biometria, SQLite, categorização automática, metas e dicas do Agente Capim.
 
-> Você mostra a vibe da sua ideia e a IA transforma em solução (ou em um caminho para ela).
+**Nome:** Capim — finanças que crescem no ritmo da conversa.
 
-## 🎯 Desafio
+## Como rodar o MVP
 
-Problema: Muitas pessoas não conseguem manter um controle financeiro porque os aplicativos exigem muita entrada de dados manual, e a criação de orçamentos é vista como algo tedioso. 
+```bash
+npm install
+cp .env.example .env   # preencha Google Client IDs para backup Drive
+npm start
+```
 
-Precisamos de uma solução que permita **controlar as finanças por meio de uma conversa simples**, com **agentes de IA** capazes de criar **planos de economia personalizados e automatizados**. Você deve utilizar as ideias de **Vibe Coding** e **MVP (Produto Mínimo Viável)** para desenvolver o **conceito de um aplicativo** que resolva o problema citado.
+Abra no Expo Go (Android/iOS). Fluxo rápido: desbloquear → Chat → `gastei 45 no mercado` → ver Início e Lançamentos.
 
-> [!IMPORTANT]
-> Você **não precisa construir o código**! O foco está em **usar a IA como sua parceira criativa**, transformando boas ideias e prompts em conceitos funcionais que simulam um produto real.
+### Backup Google Drive (E2EE)
 
-## 🪄 Etapas do Desafio
+1. Crie OAuth Client IDs no Google Cloud (scope `drive.appdata`)
+2. Preencha `EXPO_PUBLIC_GOOGLE_*_CLIENT_ID` no `.env`
+3. Aba **Backup** → Conectar Google Drive → senha Capim → Ativar sync
 
-### 1. Saber o que Pedir é a Chave! Otimize seus Prompts!
+O Drive só recebe ciphertext. Sem a senha Capim o arquivo é inutilizável.
 
-Antes de pedir para a IA "criar um app", é importante definir com clareza o que você quer construir e por quê. Para isso, você vai criar um **PRD (Product Requirements Document)** simplificado, uma especificação que serve como _briefing_ para a IA entender sua ideia.
-
-Um bom PRD deve descrever o problema, quem será beneficiado, as principais funcionalidades e o que você espera que a IA entregue. Use o modelo abaixo como ponto de partida e adapte conforme o seu estilo:
+## Prompt final (PRD) usado com a IA
 
 ```txt
 # Contexto
-Quero criar um aplicativo de Organização de Finanças Pessoais que funcione por meio de conversas com o usuário.  
-A ideia é facilitar o controle financeiro de forma simples e natural, sem formulários manuais ou planilhas complexas.
+Quero criar o Capim, app nativo (Expo/React Native) de Organização de Finanças Pessoais
+que funciona por conversa. Offline-first com SQLite, arquitetura em camadas como meu app GEMA
+(app/ rotas, src/features, src/db, shared/, server/ opcional para IA).
 
 # Problema
-Muitas pessoas desistem de controlar seus gastos porque os apps atuais exigem muita entrada manual e pouca personalização.  
-Quero resolver isso com uma experiência de conversa e recomendações automáticas de economia.
+Apps atuais exigem muita entrada manual. Quero registrar gastos falando:
+"gastei 45 no mercado", com categorização automática e dicas de economia.
 
 # Público-Alvo
-Pessoas que querem começar a organizar suas finanças de forma prática e sem complicação, principalmente iniciantes.
+Iniciantes em organização financeira no Brasil (pt-BR, BRL).
 
-# Funcionalidades-Chave
-1. Registrar gastos via chat em linguagem natural.  
-2. Classificar automaticamente as transações.  
-3. Definir e acompanhar metas financeiras.  
-4. Receber dicas de economia do “Agente Financeiro”.  
-5. Visualizar relatórios simples e personalizados.
+# Funcionalidades-Chave (MVP)
+1. Lock local (senha/biometria) — dados sensíveis no aparelho.
+2. Registrar gastos/receitas via chat em linguagem natural.
+3. Classificar automaticamente as transações (categorias em pt-BR).
+4. Definir e acompanhar metas financeiras.
+5. Dashboard do mês + dicas do Agente Capim (regras locais no MVP; API depois).
+6. Valores em centavos; sem float para dinheiro.
 
-# Entregável da IA
-Gerar um plano de MVP com as principais telas, recursos necessários e um esboço de validação inicial.  
-Usar tom educativo e linguagem acessível, em português.
+# Entregável
+App Expo funcional + README com este PRD, prints e reflexão do processo Vibe Coding.
+Tom educativo, linguagem acessível, em português.
 ```
 
-Depois de preencher o modelo, use o Copilot Web para revisar e melhorar o seu prompt antes de ir ao Lovable. A ideia é lapidar o texto até que ele fique claro, direto e reflita exatamente a sua intenção.
+PRD completo: [`docs/PRD.md`](docs/PRD.md).
 
-> [!TIP]
-> Pense no PRD/Prompt como “o briefing que a IA precisa para entender sua vibe”. Portanto, quanto mais claro e intencional for o texto, mais próximas do ideal serão as respostas da IA.
+## Imagens / interações com a IA
 
-### 2. Explorando o Lovable na Prática
+> Coloque prints em `docs/screenshots/` (Copilot, Cursor, Lovable, telas do app) e linke aqui.
 
-Com seu PRD pronto e revisado, é hora de colocar a IA em ação. Abra o Lovable, cole seu prompt completo e peça o plano inicial do MVP do seu aplicativo. Como o plano gratuito limita você a 5 interações por dia, seja estratégico:
-- Faça perguntas diretas e construtivas, como “crie o fluxo de telas com base nas funcionalidades listadas” ou “gere uma versão resumida do plano de MVP”;
-- Priorize clareza nas instruções para aproveitar ao máximo cada resposta;
+| Arquivo | Descrição |
+|---------|-----------|
+| _(adicionar)_ | Prompt/PRD no Copilot ou Cursor |
+| _(adicionar)_ | Chat registrando um gasto |
+| _(adicionar)_ | Dashboard / saldo do mês |
 
-Durante essa etapa, você pode orientar a IA para três entregas principais:
-1. Agente Financeiro: defina o comportamento e o tom de voz de um consultor financeiro pessoal, alinhado ao público e objetivo do app.
-2. Fluxo de Telas: peça à IA para gerar o fluxo conceitual de telas com base nas funcionalidades descritas no PRD, simulando a interação por conversa.
-3. Plano de MVP: solicite um resumo das 5 funcionalidades principais, dos recursos necessários e um plano de validação inicial (como medir se o app cumpre seu propósito).
+## Arquitetura (base GEMA / apps existentes)
 
-> [!TIP]
-> Se preferir, você pode fazer tudo com o **Copilot**. O importante é exercitar a habilidade de transformar intenções em instruções claras e testar os limites da IA como parceira criativa.
+```
+app/               → UI (Expo Router)
+src/features/      → chat, agente, auth
+src/db/            → SQLite + repositories
+shared/            → tipos
+server/            → stub IA (futuro; secrets só em .env)
+```
 
-### 3. Entregando o Desafio na DIO
+## Reflexão do processo
 
-Finalize seu projeto criando um **repositório no GitHub** (pode ser um **fork** deste).  
-No README do seu repositório, inclua:
+- **O que funcionou bem:** Partir de um PRD claro e da arquitetura já usada no GEMA (camadas + SQLite + auth local) acelerou o MVP sem reinventar a roda. O parser local cobre o happy path do desafio sem depender de API paga no dia 1.
+- **O que aprendi:** Vibe Coding não é “pedir o app inteiro” — é especificar problema, escopo e restrições (centavos, offline, pt-BR, sem secrets no client) para a IA entregar algo alinhado e seguro.
+- **Próximo passo:** prints reais no README; evoluir o agente para `server/` com modelo; importação de extrato (backlog).
 
-- Seu **prompt final** (PRD);  
-- Prints ou pequenos vídeos das interações com a IA;  
-- Um resumo do que o seu **App de Finanças Pessoais** faz;  
-- Uma breve **reflexão sobre o processo**:
-  - O que funcionou bem?  
-  - O que não funcionou como o esperado?  
-  - O que aprendeu sobre conversar com IAs?
+## Licença / origem
 
-> [!TIP]
-> Publique seu repositório e compartilhe o link na plataforma da DIO! Sua entrega é a prova de que você domina o raciocínio de Vibe Coding, mesmo sem escrever uma única linha de código.
-
-## 💬 Conclusão
-
-Vibe Coding é sobre clareza, curiosidade e criatividade, não sobre perfeição técnica. O verdadeiro objetivo aqui é aprender a pensar junto com a IA, transformando ideias em conceitos reais e enxergando a tecnologia como uma extensão do seu raciocínio criativo. Cada interação é um experimento, quanto mais clara for sua intenção, mais surpreendente será o resultado.
+Fork do repositório-base da DIO, com implementação própria do produto **Capim**.
