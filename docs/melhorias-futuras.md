@@ -2,19 +2,24 @@
 
 Ideias **fora** do produto atual (ver `docs/PRD.md`).
 
-## Disponibilização (produto público/privado)
+## Próximas frentes (a discutir)
 
-Quando for além do lab DIO:
+Nenhuma em andamento agora. Quando retomar, escolher uma:
 
-- Migrar para **repositório privado** (código + secrets fora do fork DIO)
-- Builds EAS (Android AAB / iOS) + canais preview/production
-- Política de privacidade + termos (LGPD); página de suporte
-- Remover/omitir Client IDs de exemplo; secrets só em EAS Secrets / `.env` local
+1. **Base de loja** — EAS (AAB/iOS) + ícones/splash + bundle id definitivo + canais preview/production
+2. **Confiança / LGPD** — política de privacidade + termos + export/wipe de dados + página de suporte
+3. **Produto** — IA no `server/`, lançamentos recorrentes, ou merge fino multi-aparelho
+
+Também: migrar deste fork DIO para **repositório privado** antes de tratar como produto.
+
+## Disponibilização
+
+- Secrets só em EAS Secrets / `.env` local (nunca no repo)
 - TestFlight / Play Internal testing antes de loja
 - Telemetria mínima opt-in (sem PII financeira) ou zero analytics no v1
-- Hardening: rate limit futuro da API de IA; wipe local; export de dados (LGPD)
+- Hardening: rate limit da API de IA (quando existir)
 
-## Produto
+## Produto (backlog)
 
 - API de IA em `server/` (DeepSeek/Gemini) para parser mais rico e conselhos personalizados
 - Open Banking / importação de extrato OFX/CSV
