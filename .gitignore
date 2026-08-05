@@ -47,3 +47,5 @@ yarn-error.*
 .cursor/
 .cursorignore
 docs/melhorias-futuras.md
+docs/comandos-testes.md
+scripts/

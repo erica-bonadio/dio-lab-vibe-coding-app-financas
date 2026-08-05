@@ -21,25 +21,22 @@ Desafio DIO Vibe Coding + MVP funcional Expo.
 | `src/theme/` | Cores e tipografia |
 | `shared/` | Tipos/contratos |
 | `server/` | Stub para API de IA (futuro) |
-| `docs/` | PRD, backlog, comandos de teste |
+| `docs/` | PRD (público no fork); demais docs locais |
 
 ## Comandos
-
-Ver `docs/comandos-testes.md`.
 
 ```bash
 npm start                 # Expo (SDK 54)
 npm run typecheck
-npm run cid:check
-npm run db:check
 ```
+
+Packs internos (`cid:check`, `db:check`, `smoke`) e `docs/comandos-testes.md` ficam **só locais**.
 
 ## Documentação
 
 | Arquivo | Conteúdo |
 |---------|----------|
 | `docs/PRD.md` | Produto atual |
-| `docs/comandos-testes.md` | Packs de check |
 | `README.md` | Entrega DIO (PRD/prompt, prints, reflexão) |
 
-> Backlog futuro (`docs/melhorias-futuras.md`) e regras Cursor (`.cursor/`) ficam **só locais**, fora do fork DIO.
+> Locais (fora do fork DIO): `.cursor/`, `docs/melhorias-futuras.md`, `docs/comandos-testes.md`, `scripts/`.

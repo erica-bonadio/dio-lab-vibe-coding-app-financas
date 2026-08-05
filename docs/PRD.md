@@ -85,7 +85,7 @@ flowchart LR
 - [x] Lock local no primeiro uso
 - [x] Com Client IDs configurados: conectar Drive → ativar sync com senha → arquivo `capim-backup.v1.json` na appData
 - [x] Restaurar com senha correta; senha errada falha sem corromper dados locais até confirmar
-- [x] `npm run typecheck` / `db:check` / `cid:check` passando
+- [x] `npm run typecheck` passando (packs SI/BD/smoke só no ambiente local)
 - [x] Sem secrets no repo
 
 ## 7. Prompt final (PRD para IA / entrega DIO)
